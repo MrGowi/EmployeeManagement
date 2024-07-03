@@ -1,0 +1,35 @@
+﻿@model Employee
+
+<div class="card">
+
+	<div class="card-header"> 
+		<h5>Create or Edit an Employee</h5>
+	</div>
+
+	<form asp-action="CreateEditEmployee" method="post">
+		<div class="card-body">
+			<div class="row">
+				<div class="col">
+					<input hidden asp-for="Id" placeholder="ID" class="form-control" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<input asp-for="Firstname" placeholder="Vorname" class="form-control" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<input asp-for="Lastname" placeholder="Nachname" class="form-control" />
+				</div>
+			</div>
+		</div>
+
+		<div class="card-footer">
+			<button type="submit" class="btn btn-primary">Speichern</button>
+		</div>
+	</form>
+
+</div>

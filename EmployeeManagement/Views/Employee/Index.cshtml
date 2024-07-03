@@ -1,0 +1,45 @@
+﻿
+
+<h2>Employees</h2>
+
+<form asp-action="CreateEdit">
+    <button type="submit" class="btn btn-primary">+ Create Employee</button>
+</form>
+
+<hr />
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Employee employee in ViewBag.Employees)
+        {
+            <tr>
+                <td>
+                    @employee.Id
+                </td>
+                <td>
+                    @employee.Firstname
+                </td>
+                <td>
+                    @employee.Lastname
+                </td>
+                <td>
+                    <form asp-action="CreateEdit" asp-route-id="@employee.Id">  <!-- asp-controller="Andere Controller" -->
+                        <button type="submit" class="btn btn-warning">Edit</button>
+                    </form>
+                    <form asp-action="DeleteEmployee" asp-route-id="@employee.Id"> 
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
