@@ -1,6 +1,7 @@
 ﻿using EmployeeManagement.Data;
 using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
 
 namespace EmployeeManagement.Controllers
 {
@@ -74,5 +75,7 @@ namespace EmployeeManagement.Controllers
             return RedirectToAction("Index");
 
         }
+
     }
 }
+

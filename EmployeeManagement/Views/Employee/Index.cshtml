@@ -37,6 +37,9 @@
                     <form asp-action="DeleteEmployee" asp-route-id="@employee.Id"> 
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
+                    <form asp-action="SendEmail" asp-route-id="@employee.Id">
+                        <button type="submit" class="btn btn-primary">Send E-Mail</button>
+                    </form>
                 </td>
             </tr>
         }
