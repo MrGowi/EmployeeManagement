@@ -76,6 +76,13 @@ namespace EmployeeManagement.Controllers
 
         }
 
+        public IActionResult SendEmail()
+        {
+            return View();
+        }
+
+
+
     }
 }
 

@@ -1,6 +1,4 @@
-﻿
-
-<h2>Employees</h2>
+﻿<h2>Employees</h2>
 
 <form asp-action="CreateEdit">
     <button type="submit" class="btn btn-primary">+ Create Employee</button>
@@ -31,18 +29,15 @@
                     @employee.Lastname
                 </td>
                 <td>
-                    <form asp-action="CreateEdit" asp-route-id="@employee.Id">  <!-- asp-controller="Andere Controller" -->
+                    <form asp-action="CreateEdit" asp-route-id="@employee.Id">
                         <button type="submit" class="btn btn-warning">Edit</button>
                     </form>
-                    <form asp-action="DeleteEmployee" asp-route-id="@employee.Id"> 
+                    <form asp-action="DeleteEmployee" asp-route-id="@employee.Id">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
-                    <form asp-action="SendEmail" asp-route-id="@employee.Id">
-                        <button type="submit" class="btn btn-primary">Send E-Mail</button>
-                    </form>
+                    <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("SendEmail", "Employee")'">Send Email</button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
