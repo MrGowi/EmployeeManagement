@@ -1,13 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Send Email";
-}
+﻿@model EmployeeManagement.Models.Employee
 
 <h2>Send Email</h2>
 
-<form asp-action="SendEmail">
+<form asp-action="SendEmail" method="post">
     <div class="form-group">
         <label for="email">Email address</label>
-        <input type="text" class="form-control" id="email" value="@ViewBag.EmployeeEmail" readonly />
+        <input asp-for="Email" placeholder="Email" class="form-control" readonly />
     </div>
     <div class="form-group">
         <label for="subject">Subject</label>

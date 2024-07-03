@@ -76,12 +76,17 @@ namespace EmployeeManagement.Controllers
 
         }
 
-        public IActionResult SendEmail()
+        public IActionResult SendEmail(int id)
         {
-            return View();
+           var employeeInDb = _dbContext.Employees.Find(id);
+
+           if(employeeInDb == null)
+            {
+                return NotFound();
+            }
+
+            return View("SendEmail", employeeInDb);
         }
-
-
 
     }
 }
