@@ -1,4 +1,5 @@
 using EmployeeManagement.Data;
+using EmployeeManagement.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+// Registrieren des E-Mail-Sende-Services
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 

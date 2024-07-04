@@ -12,7 +12,9 @@
             <th>ID</th>
             <th>Vorname</th>
             <th>Nachname</th>
-            <th>Aktionen</th>
+            <th>E-Mail Senden</th>
+            <th>Editieren</th>
+            <th>Löschen</th>
         </tr>
     </thead>
     <tbody>
@@ -29,17 +31,28 @@
                     @employee.Lastname
                 </td>
                 <td>
-                    <form asp-action="CreateEdit" asp-route-id="@employee.Id">
-                        <button type="submit" class="btn btn-warning">Edit</button>
-                    </form>
-                    <form asp-action="DeleteEmployee" asp-route-id="@employee.Id">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
                     <form asp-action="SendEmail" asp-route-id="@employee.Id">
-                        <button type="submit" class="btn btn-danger">Send E-Mail</button>
+                        <button type="submit" class="btn btn-primary">E-Mail</button>
                     </form>
                 </td>
+                <td>
+                    <form asp-action="CreateEdit" asp-route-id="@employee.Id">
+                        <button type="submit" class="btn btn-warning">Editieren</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-action="DeleteEmployee" asp-route-id="@employee.Id">
+                        <button type="submit" class="btn btn-danger">Löschen</button>
+                    </form>
+                </td>
+                
             </tr>
         }
     </tbody>
+    
 </table>
+
+
+<form asp-action="ExportTable">
+    <button type="submit" class="btn btn-primary">Tabelle Exportieren</button>
+</form>
